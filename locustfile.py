@@ -1,3 +1,5 @@
+import json
+
 from locust import HttpLocust, TaskSet, task
 
 
@@ -16,7 +18,9 @@ class UserBehavior(TaskSet):
 
     @task(1)
     def longer(self):
-        self.client.get('/longer')
+        response = self.client.get('/longer')
+        payload = json.loads(response.content)
+        print(payload['results'])
 
 
 class WebsiteUser(HttpLocust):
