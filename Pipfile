@@ -9,6 +9,8 @@ name = "pypi"
 
 flask = "*"
 locustio = "*"
+gunicorn = "*"
+eventlet = "*"
 
 
 [dev-packages]
