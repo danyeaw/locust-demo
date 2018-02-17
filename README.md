@@ -2,13 +2,13 @@
 
 ### Prerequisites
 
-Install Python 3 and pipenv.
+Python 3 and pipenv (https://github.com/pypa/pipenv) are required.
 
 ### Installation
 
 1. Clone the repository:
 
-        cd /path/to/your/projectes
+        cd /path/to/your/projects
         git clone https://github.com/empug/locust-demo.git
 
 2. Make the repository directory the current directory:
