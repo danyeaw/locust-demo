@@ -8,9 +8,9 @@ from flask import jsonify
 app = Flask(__name__)
 random.seed()
 
-chars = list('abcdefghijkmnpqrstuvwxyz0123456789')
 
 def random_string(length=10):
+    chars = list('abcdefghijkmnpqrstuvwxyz0123456789')
     return ''.join(random.choices(chars, k=length))
 
 
