@@ -18,6 +18,10 @@ Python 3 and pipenv (https://github.com/pypa/pipenv) are required.
 3. Install packages using pipenv:
 
         pipenv install
+        
+    This command installs the packages specified in *Pipfile*. These include
+    Flask (http://flask.pocoo.org), Locust (https://locust.io),
+    Gunicorn (http://gunicorn.org) and Eventlet (http://eventlet.net).
 
 ### Running a single-threaded Flask app
 
