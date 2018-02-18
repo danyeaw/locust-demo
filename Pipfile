@@ -10,7 +10,7 @@ name = "pypi"
 quart = "*"
 locustio = "*"
 gunicorn = "*"
-eventlet = "*"
+uvloop = "*"
 
 
 [dev-packages]
