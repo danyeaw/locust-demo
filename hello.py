@@ -25,16 +25,14 @@ async def health():
 
 @app.route('/shorter')
 async def shorter():
-    asyncio.sleep(0.3)
-    # s = 'abc'
+    await asyncio.sleep(0.3)
     s = random_string()
     return jsonify({'results': s})
 
 
 @app.route('/longer')
 async def longer():
-    asyncio.sleep(1.5)
-    # s = 'def'
+    await asyncio.sleep(1.5)
     s = random_string(20)
     return jsonify({'results': s})
 
