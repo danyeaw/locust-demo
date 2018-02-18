@@ -37,4 +37,15 @@ Python 3 and pipenv (https://github.com/pypa/pipenv) are required.
 3. In a new terminal, run Locust and test with different numbers of users:
 
         pipenv run locust --host=http://localhost:5000
+        
+### Running Quart behind Gunicorn
+
+1. Launch Gunicorn
+
+        pipenv run gunicorn --worker-class quart.worker.GunicornUVLoopWorker hello:app
+
+3. In a new terminal, run Locust and test with different numbers of users:
+
+        pipenv run locust --host=http://localhost:5000
+
 
