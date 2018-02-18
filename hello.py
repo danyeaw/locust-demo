@@ -1,11 +1,11 @@
 import random
-import time
+import asyncio
 
-from flask import Flask
-from flask import render_template
-from flask import jsonify
+from quart import Quart
+from quart import render_template
+from quart import jsonify
 
-app = Flask(__name__)
+app = Quart(__name__)
 random.seed()
 
 
@@ -13,26 +13,30 @@ def random_string(length=10):
     chars = list('abcdefghijkmnpqrstuvwxyz0123456789')
     return ''.join(random.choices(chars, k=length))
 
-
 @app.route('/')
-def hello_world():
-    return render_template('hello.html')
+async def hello_world():
+    return await render_template('hello.html')
 
 
 @app.route('/health')
-def health():
+async def health():
     return jsonify({'status': 'OK'})
 
 
 @app.route('/shorter')
-def shorter():
-    time.sleep(0.3)
+async def shorter():
+    asyncio.sleep(0.3)
+    # s = 'abc'
     s = random_string()
     return jsonify({'results': s})
 
 
 @app.route('/longer')
-def longer():
-    time.sleep(1.5)
+async def longer():
+    asyncio.sleep(1.5)
+    # s = 'def'
     s = random_string(20)
     return jsonify({'results': s})
+
+
+app.run()
